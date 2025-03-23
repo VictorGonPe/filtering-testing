@@ -291,12 +291,25 @@ describe('Function "orderByYear"', () => {
 });
 
 // Exercise 6
-// YOUR CODE HERE. Test moviesAverageByCategory()
+
 describe('Function "moviesAverageByCategory"', () => {
-  it('ADD YOUR CODE IN films.spec.js file', () => {
-    expect(typeof hoursToMinutes).toBe('coffee');
+  const sampleMovies = [
+    { title: "A", genre: ["Crime"], score: 7 },
+    { title: "B", genre: ["Crime"], score: 9 },
+    { title: "C", genre: ["Drama"], score: 8 },
+  ];
+
+  it('returns the correct average for Action movies', () => {
+    const result = moviesAverageByCategory(sampleMovies, "Crime");
+    expect(result).toBe("8.00"); // ← recuerda que toFixed(2) devuelve string
+  });
+
+  it('returns 0 if no movies match the genre', () => {
+    const result = moviesAverageByCategory(sampleMovies, "Comedy");
+    expect(result).toBe(0);
   });
 });
+
 
 // Exercise 7
 describe('Function "hoursToMinutes"', () => {
