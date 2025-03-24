@@ -92,8 +92,7 @@ function bestFilmOfYear(array, year) {
   })
   return theBest;
 }
-
-console.log(bestFilmOfYear(movies,2001));
+console.log("EXERCICE 8 -> ",bestFilmOfYear(movies,2001));
 
 
 // The following is required to make unit tests work.
