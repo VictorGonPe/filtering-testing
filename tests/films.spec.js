@@ -301,7 +301,7 @@ describe('Function "moviesAverageByCategory"', () => {
 
   it('returns the correct average for Action movies', () => {
     const result = moviesAverageByCategory(sampleMovies, "Crime");
-    expect(result).toBe("8.00"); // ← recuerda que toFixed(2) devuelve string
+    expect(result).toBe("8.00");
   });
 
   it('returns 0 if no movies match the genre', () => {

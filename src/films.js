@@ -64,9 +64,23 @@ console.log("EXERCICE 6 -> ",moviesAverageByCategory(movies,'crime'));
 
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
+function hoursToMinutes(array) {
+  const regex1 = /(\d+)h/;
+  const regex2 = /(\d+)min/;
 
+  const arrayCopy = array.map(film => { 
+    const hoursMatch = film.duration.match(regex1);
+    const minMatch = film.duration.match(regex2);
+    const hours = hoursMatch ? hoursMatch[1] : 0;
+    const min = minMatch ? minMatch[1] : 0;
+    const totalMin = `${parseInt(hours) * 60 + parseInt(min)}`;     
+
+    return {...film, duration: totalMin};
+  })
+  return arrayCopy;
 }
+
+console.log("EXERCICE 7 -> ", hoursToMinutes(movies));
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {
