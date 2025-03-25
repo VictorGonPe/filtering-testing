@@ -2,7 +2,7 @@ const movies = require('./data');
 
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
-  let result =  array.map(item => item.director);
+  let result = array.map(item => item.director);
   //console.log("EXERCICE 1 ->", result);
   return result;
 }
@@ -28,23 +28,23 @@ function orderAlphabetically(array) {
   const arrayCopy = [...array];
   let titles = arrayCopy
     .map(film => film.title)
-    .sort();  
+    .sort();
   //console.log("EXERCICE 4 ->", titles.slice(0,20));
-  return titles.slice(0,20);
+  return titles.slice(0, 20);
 }
 
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
   const arrayCopy = [...array];
-  let titles = arrayCopy.sort((a,b) => {
-    if(a.year !== b.year){
+  let titles = arrayCopy.sort((a, b) => {
+    if (a.year !== b.year) {
       return a.year - b.year;
-    }else{
+    } else {
       return a.title.localeCompare(b.title);
     }
-  }); 
-   // console.log("EXERCICE 5 ->", titles);
-   return titles;
+  });
+  // console.log("EXERCICE 5 ->", titles);
+  return titles;
 }
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array, genre) {
@@ -53,13 +53,13 @@ function moviesAverageByCategory(array, genre) {
   const filmsGenre = array.filter(film =>
     film.genre.some(gen => gen.toLowerCase().trim() === formatGenre)
   );
-  
+
   if (filmsGenre.length === 0) return 0;
-  
+
   const totalScore = filmsGenre.reduce((sum, film) => sum + film.score, 0);
   const average = totalScore / filmsGenre.length;
 
-  return average.toFixed(2); 
+  return average.toFixed(2);
 }
 
 //console.log("EXERCICE 6 -> ",moviesAverageByCategory(movies,'crime'));
@@ -70,14 +70,14 @@ function hoursToMinutes(array) {
   const regex1 = /(\d+)h/;
   const regex2 = /(\d+)min/;
 
-  const arrayCopy = array.map(film => { 
+  const arrayCopy = array.map(film => {
     const hoursMatch = film.duration.match(regex1);
     const minMatch = film.duration.match(regex2);
     const hours = hoursMatch ? hoursMatch[1] : 0;
     const min = minMatch ? minMatch[1] : 0;
-    const totalMin = parseInt(hours) * 60 + parseInt(min);     
+    const totalMin = parseInt(hours) * 60 + parseInt(min);
 
-    return {...film, duration: totalMin};
+    return { ...film, duration: totalMin };
   })
   return arrayCopy;
 }
@@ -86,10 +86,10 @@ function hoursToMinutes(array) {
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear(array, year) {
   const bestFilm = array.filter(film => film.year === year);
-  
+
   if (bestFilm.length === 0) return [];
-  
-  const theBest = bestFilm.reduce((max,current) => {
+
+  const theBest = bestFilm.reduce((max, current) => {
     return current.score > max.score ? current : max;
   })
   return [theBest];
