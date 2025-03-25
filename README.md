@@ -31,7 +31,7 @@ You don't need to render anything on screen — your goal is to implement functi
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/VictorGonPe/Ecommerce.git
+    git clone https://github.com/VictorGonPe/filtering-testing.git
     cd Ecommerce
     ```
 
