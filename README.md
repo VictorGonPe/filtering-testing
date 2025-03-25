@@ -32,7 +32,7 @@ You don't need to render anything on screen — your goal is to implement functi
 
     ```bash
     git clone https://github.com/VictorGonPe/filtering-testing.git
-    cd Ecommerce
+    cd filtering-testing
     ```
 
 2. Install required packages:
