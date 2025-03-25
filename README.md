@@ -7,8 +7,6 @@
 This project focuses on passing a series of **unit tests** related to movie filtering.  
 You don't need to render anything on screen — your goal is to implement functions that **return the correct results** when tested.
 
-> 💡 You’ll work with an array of movie objects and create functions to search, filter, and analyze information from it.
-
 ---
 
 ## Technologies and Tools
